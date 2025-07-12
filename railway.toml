@@ -1,0 +1,15 @@
+[build]
+builder = "dockerfile"
+
+[deploy]
+startCommand = "npm start"
+healthcheckPath = "/health"
+healthcheckTimeout = 100
+restartPolicyType = "always"
+
+[[services]]
+name = "metadata-cleaner-api"
+
+[services.variables]
+NODE_ENV = "production"
+PORT = "3000"
